@@ -18,7 +18,7 @@ The default port is not easy to change, use :4000(?)
 ### Ruby
 ```
 bundle install
-ruby app.rb
+ruby my_app.rb
 ```
 
 ### Go
