@@ -1,4 +1,4 @@
-# lang_bench
+# Code for making your own server for processing NationBuilder webhooks
 
 This a collection of example code for NationBuilder webhook servers. Each server is setup to accept
 an HTTP POST request with a body containing the information for a person. An example request body
