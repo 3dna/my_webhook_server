@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'activerecord'
+gem 'awesome_print'
 gem 'json'
 gem 'sinatra'
+gem 'sqlite3'
+gem 'pry'
+gem 'pry-nav'
 gem 'puma'
 
