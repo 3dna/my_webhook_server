@@ -1,8 +1,8 @@
 require 'active_record'
-require 'sinatra'
+require 'awesome_print'
 require 'json'
 require 'puma'
-require 'awesome_print'
+require 'sinatra'
 
 ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'w'))
 
@@ -37,14 +37,12 @@ class Person < ActiveRecord::Base
   end
 end
 
-
-
-post '/person' do
+post '/update_person' do
   person = JSON.parse(request.body.read)
   full_name = person['first_name'] + ' ' + person['last_name']
   Person.synchronize(full_name, person['email'], person['id'])
 end
 
-get '/' do
+get '/list_people' do
   'Webhook consumer is running...'
 end
