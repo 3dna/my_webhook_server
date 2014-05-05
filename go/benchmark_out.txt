@@ -5,42 +5,44 @@ Licensed to The Apache Software Foundation, http://www.apache.org/
 Benchmarking localhost (be patient).....done
 
 
-Server Software:
+Server Software:        
 Server Hostname:        localhost
 Server Port:            4567
 
 Document Path:          /update_person
 Document Length:        0 bytes
 
-Concurrency Level:      8
-Time taken for tests:   0.300 seconds
+Concurrency Level:      1
+Time taken for tests:   0.155 seconds
 Complete requests:      100
 Failed requests:        0
 Write errors:           0
 Total transferred:      11600 bytes
 Total body sent:        1247800
 HTML transferred:       0 bytes
-Requests per second:    333.65 [#/sec] (mean)
-Time per request:       23.977 [ms] (mean)
-Time per request:       2.997 [ms] (mean, across all concurrent requests)
-Transfer rate:          37.80 [Kbytes/sec] received
-                        4065.68 kb/s sent
-                        4103.48 kb/s total
+Requests per second:    646.33 [#/sec] (mean)
+Time per request:       1.547 [ms] (mean)
+Time per request:       1.547 [ms] (mean, across all concurrent requests)
+Transfer rate:          73.22 [Kbytes/sec] received
+                        7875.87 kb/s sent
+                        7949.09 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.0      0       0
-Processing:     1   17  49.2      2     270
-Waiting:        1   17  49.2      2     270
-Total:          1   17  49.2      2     270
+Processing:     1    1   0.2      1       2
+Waiting:        1    1   0.2      1       2
+Total:          1    2   0.2      1       3
+ERROR: The median and mean for the total time are more than twice the standard
+       deviation apart. These results are NOT reliable.
 
 Percentage of the requests served within a certain time (ms)
-  50%      2
-  66%      3
-  75%      5
-  80%     10
-  90%     39
-  95%    144
-  98%    246
-  99%    270
- 100%    270 (longest request)
+  50%      1
+  66%      2
+  75%      2
+  80%      2
+  90%      2
+  95%      2
+  98%      2
+  99%      3
+ 100%      3 (longest request)

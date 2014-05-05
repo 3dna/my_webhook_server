@@ -44,7 +44,7 @@ end
 get '/list_people' do
   rows = ""
   Person.find_each do |p|
-    rows.append <<-ROWS
+    rows << <<-ROWS
     <tr>
       <td>#{p.id}</td>
       <td>#{p.name}</td>
