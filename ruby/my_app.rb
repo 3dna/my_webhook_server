@@ -31,8 +31,6 @@ class Person < ActiveRecord::Base
     person.email = email
     person.updates = person.updates.to_i + 1
 
-    ap person
-
     person.save
   end
 end
@@ -44,5 +42,27 @@ post '/update_person' do
 end
 
 get '/list_people' do
-  'Webhook consumer is running...'
+  rows = ""
+  Person.find_each do |p|
+    rows.append <<-ROWS
+    <tr>
+      <td>#{p.id}</td>
+      <td>#{p.name}</td>
+      <td>#{p.email}</td>
+      <td>#{p.updates}</td>
+    </tr>
+    ROWS
+  end
+
+  <<-TABLE
+  <table style="width:300px">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Updates</td>
+  </tr>
+  #{rows}
+  </table>
+  TABLE
 end

@@ -1,0 +1,48 @@
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            4567
+
+Document Path:          /update_person
+Document Length:        0 bytes
+
+Concurrency Level:      8
+Time taken for tests:   5.339 seconds
+Complete requests:      100
+Failed requests:        6
+   (Connect: 0, Receive: 0, Length: 6, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      6
+Total transferred:      1321423 bytes
+Total body sent:        1247800
+HTML transferred:       1302833 bytes
+Requests per second:    18.73 [#/sec] (mean)
+Time per request:       427.110 [ms] (mean)
+Time per request:       53.389 [ms] (mean, across all concurrent requests)
+Transfer rate:          241.71 [Kbytes/sec] received
+                        228.24 kb/s sent
+                        469.95 kb/s total
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     3  276 1143.3      9    5273
+Waiting:        3  275 1143.4      8    5273
+Total:          3  276 1143.3      9    5274
+
+Percentage of the requests served within a certain time (ms)
+  50%      9
+  66%     12
+  75%     15
+  80%     16
+  90%     71
+  95%   5143
+  98%   5259
+  99%   5274
+ 100%   5274 (longest request)
