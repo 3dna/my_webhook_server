@@ -1,7 +1,6 @@
 package main
 
 import (
-	_ "code.google.com/p/go-sqlite/go1/sqlite3"
 	"database/sql"
 	"encoding/json"
 	"fmt"
@@ -11,6 +10,7 @@ import (
 	"os"
 	"runtime"
 	"strings"
+	_ "code.google.com/p/go-sqlite/go1/sqlite3"
 )
 
 func httpPostHandler(w http.ResponseWriter, r *http.Request) {
@@ -56,8 +56,8 @@ func httpGetHandler(w http.ResponseWriter, r *http.Request) {
 const PORT = ":4567"
 
 func main() {
-	http.HandleFunc("/person", httpPostHandler)
-	http.HandleFunc("/people", httpGetHandler)
+	http.HandleFunc("/update_person", httpPostHandler)
+	http.HandleFunc("/list_people", httpGetHandler)
 
 	error := http.ListenAndServe(PORT, nil)
 	if error != nil {
