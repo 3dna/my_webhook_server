@@ -4,7 +4,8 @@
 This repository has example code for setting up a webserver that accept webhooks. Webhooks are sent 
 from NationBuilder to your webserver via [HTTP POST requests](http://en.wikipedia.org/wiki/POST_(HTTP)).
 
-Each server is setup to accept an HTTP POST request with a body  containing the information for a person. An example request body is in the file ```person_created.json```. That file has JSON of the same format if you had a webhook triggered when a person is created.
+Each server is setup to accept an HTTP POST request with a body  containing the information for a person. An example request body is in the file ```person_created.json```. That file has JSON in the same format set by NationBuilder
+for a webhook triggered when a person is created.
 
 Examples are provided for: PHP, Ruby, and Go.
 
