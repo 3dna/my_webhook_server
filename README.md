@@ -12,9 +12,13 @@ The URL is localhost:4567 for each of the servers.
 ## Starting the webhook servers
 
 ### Starting the PHP server
-Copy the file file my_app.php in where your Apache webserver files live
 
-The default port is not easy to change, use :4000(?)
+On OSX, copy *.php files to ```/Library/WebServer/Documents/```
+
+Make the directory writeable so that the sqlite database file can be modified.
+```chmod a+w /Library/WebServer/Documents```
+
+```http://localhost/list_people``` will show list the people. 
 
 ### Starting the Ruby server
 ```
@@ -22,20 +26,51 @@ bundle install
 ruby my_app.rb
 ```
 
+```http://localhost:4567/list_people``` will list the people.
+
+
 ### Starting the Go server
 ```
+go get code.google.com/p/gosqlite/sqlite
 go run my_app.go
 ```
 
+```http://localhost:4567/list_people``` will list the people.
+
 ## To test individual HTTP POST use [curl(1)](http://en.wikipedia.org/wiki/CURL)
 
+For Ruby and Go, use curl with this URL
 ```
-curl -X POST -d @person_created.json http://localhost:4567/
+curl -X POST -d @person_created.json http://localhost:4567/update_person
+```
 
-curl -X POST -d @person_created.json http://tranquil-reef-3487.herokuapp.com/
+For PHP, use curl with this URL:
+```
+curl -X POST -d @person_created.json http://localhost/update_person
 ```
 
 ## To benchmark
+
+The script below uses ab - Apache HTTP server benchmarking tool - to test the webhooks.
+
+Sqlite3 does not support concurrent writes. So, there will be no improvement with concurrency testing.
+
+For testing, php server use:
+```
+./benchmark_php.sh
+```
+
+For testing, go or ruby server use:
 ```
 ./benchmark.sh
 ```
+
+Here is a summary of the data from {php, ruby, go}/benchmark_out.txt
+
+| Language  | Requests per second |
+| ----------|:-------------------:|
+| PHP       | 513.04              |
+| Ruby      | 236.55              |
+| Go        | 638.45              |
+
+
