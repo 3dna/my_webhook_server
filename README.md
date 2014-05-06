@@ -40,6 +40,9 @@ In a browser, go here to list the people ```http://localhost:4567/list_people```
 
 ## To test individual HTTP POST use [curl(1)](http://en.wikipedia.org/wiki/CURL)
 
+Your web server is now ready to receive webhooks. You can simulate a webhook send out
+by NationBuilder using curl.
+
 For Ruby and Go, use curl with this URL
 ```
 curl -X POST -d @person_created.json http://localhost:4567/update_person
@@ -49,6 +52,14 @@ For PHP, use curl with this URL:
 ```
 curl -X POST -d @person_created.json http://localhost/update_person
 ```
+
+## Connect you webhook server to NationBuilder
+
+For PHP, use this URL ```http://{your machine's external name}/update_person```
+
+For Ruby or Go, use this URL ```http://{your machine's external name}:4567/update_person```
+
+Read more about NationBuilder webhooks here: http://nationbuilder.com/webhooks_overview
 
 ## To benchmark
 
