@@ -53,7 +53,7 @@ For PHP, use curl with this URL:
 curl -X POST -d @person_created.json http://localhost/update_person
 ```
 
-## Connect you webhook server to NationBuilder
+## Connect webhook server to NationBuilder
 
 For PHP, use this URL ```http://{your machine's external name}/update_person```
 
