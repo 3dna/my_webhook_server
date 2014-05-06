@@ -16,9 +16,11 @@ The URL is localhost:4567 for each of the servers.
 On OSX, copy *.php files to ```/Library/WebServer/Documents/```
 
 Make the directory writeable so that the sqlite database file can be modified.
-```chmod a+w /Library/WebServer/Documents```
+```
+chmod a+w /Library/WebServer/Documents
+```
 
-```http://localhost/list_people``` will show list the people. 
+In a browser go here to list the people ```http://localhost/list_people``` 
 
 ### Starting the Ruby server
 ```
@@ -26,7 +28,7 @@ bundle install
 ruby my_app.rb
 ```
 
-```http://localhost:4567/list_people``` will list the people.
+In a browser go here to list the people ```http://localhost:4567/list_people``` 
 
 
 ### Starting the Go server
