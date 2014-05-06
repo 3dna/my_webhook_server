@@ -66,6 +66,7 @@ For testing, go or ruby server use:
 ./benchmark.sh
 ```
 
+These benchmarks were run on a MacBook Pro, Mid 2012, 2.3 GHz Intel Core i7.
 Here is a summary of the data from {php, ruby, go}/benchmark_out.txt
 
 | Language  | Requests per second |
