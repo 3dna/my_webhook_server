@@ -20,7 +20,13 @@ people with the fields: ID, name, email, updates
 ### Starting the PHP server
 
 To enable the bundled PHP on OSX, follow the instructions [here](http://www.php.net/manual/en/install.macosx.bundled.php).
+
 And then, copy ```list_people.php``` and ```update_person.php``` to ```/Library/WebServer/Documents/```
+```
+cd php
+cp list_people.php update_person.php /Library/WebServer/Documents
+```
+
 
 Make the directory writeable so that the sqlite database file can be modified.
 ```
@@ -31,6 +37,7 @@ In a browser, go here to list the people ```http://localhost/list_people```
 
 ### Starting the Ruby server
 ```
+cd ruby
 bundle install
 ruby my_app.rb
 ```
@@ -40,6 +47,7 @@ In a browser, go here to list the people ```http://localhost:4567/list_people```
 
 ### Starting the Go server
 ```
+cd go
 go get code.google.com/p/gosqlite/sqlite
 go run my_app.go
 ```
