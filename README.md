@@ -19,7 +19,7 @@ Make the directory writeable so that the sqlite database file can be modified.
 chmod a+w /Library/WebServer/Documents
 ```
 
-In a browser go here to list the people ```http://localhost/list_people``` 
+In a browser, go here to list the people ```http://localhost/list_people``` 
 
 ### Starting the Ruby server
 ```
@@ -27,7 +27,7 @@ bundle install
 ruby my_app.rb
 ```
 
-In a browser go here to list the people ```http://localhost:4567/list_people``` 
+In a browser, go here to list the people ```http://localhost:4567/list_people``` 
 
 
 ### Starting the Go server
