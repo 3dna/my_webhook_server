@@ -39,8 +39,6 @@ func httpPostHandler(w http.ResponseWriter, r *http.Request) {
 			updates: 0}
 
 		database.Insert(p)
-
-		fmt.Printf("Person updated: %s\n", string(fullname))
 	}
 }
 
