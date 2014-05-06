@@ -36,7 +36,7 @@ go get code.google.com/p/gosqlite/sqlite
 go run my_app.go
 ```
 
-```http://localhost:4567/list_people``` will list the people.
+In a browser, go here to list the people ```http://localhost:4567/list_people``` 
 
 ## To test individual HTTP POST use [curl(1)](http://en.wikipedia.org/wiki/CURL)
 
