@@ -13,26 +13,26 @@ Document Path:          /update_person
 Document Length:        25 bytes
 
 Concurrency Level:      1
-Time taken for tests:   0.194 seconds
+Time taken for tests:   0.195 seconds
 Complete requests:      100
 Failed requests:        0
 Write errors:           0
 Total transferred:      24800 bytes
 Total body sent:        1247300
 HTML transferred:       2500 bytes
-Requests per second:    515.38 [#/sec] (mean)
-Time per request:       1.940 [ms] (mean)
-Time per request:       1.940 [ms] (mean, across all concurrent requests)
-Transfer rate:          124.82 [Kbytes/sec] received
-                        6277.66 kb/s sent
-                        6402.48 kb/s total
+Requests per second:    513.04 [#/sec] (mean)
+Time per request:       1.949 [ms] (mean)
+Time per request:       1.949 [ms] (mean, across all concurrent requests)
+Transfer rate:          124.25 [Kbytes/sec] received
+                        6249.12 kb/s sent
+                        6373.37 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.0      0       0
 Processing:     1    2   1.6      2      18
 Waiting:        1    2   1.6      2      18
-Total:          2    2   1.6      2      18
+Total:          1    2   1.6      2      18
 
 Percentage of the requests served within a certain time (ms)
   50%      2
