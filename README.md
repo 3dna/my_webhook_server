@@ -1,7 +1,7 @@
 
-# Your Webhook Server
+# My Webhook Server
 
-In this repository is code for setting up your webserver that accept webhooks. Webhooks are sent 
+In this repository has example code for setting up a webserver that accept webhooks. Webhooks are sent 
 from NationBuilder to your webserver via [HTTP POST requests](http://en.wikipedia.org/wiki/POST_(HTTP)).
 
 Each server is setup to accept an HTTP POST request with a body  containing the information for a person. An example request body is in the file ```person_created.json```. That file has JSON of the same format if you had a webhook triggered when a person is created.
