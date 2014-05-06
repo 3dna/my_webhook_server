@@ -61,6 +61,8 @@ For Ruby or Go, use this URL ```http://{your machine's external name}:4567/updat
 
 Read more about NationBuilder webhooks here: http://nationbuilder.com/webhooks_overview
 
+![alt tag](https://raw.githubusercontent.com/3dna/my_webhook_server/master/nationbuilder_webhook_setup.png)
+
 ## To benchmark
 
 The script below uses ab - Apache HTTP server benchmarking tool - to test the webhooks.
