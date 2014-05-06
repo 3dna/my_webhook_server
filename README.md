@@ -9,11 +9,18 @@ for a webhook triggered when a person is created.
 
 Examples are provided for: PHP, Ruby, and Go.
 
+## What the does the sample app do?
+
+It reads the webhooks and stores the NationBuilder ID, name, email, and the number of times that person has
+been updated into a SQLite3 database. The list of people is then viewable on a another URL as a list of
+people with the fields: ID, name, email, updates
+
 ## Starting the webhook servers
 
 ### Starting the PHP server
 
-On OSX, copy *.php files to ```/Library/WebServer/Documents/```
+To enable the bundled PHP on OSX, follow the instructions [here](http://www.php.net/manual/en/install.macosx.bundled.php).
+And then, copy ```list_people.php``` and ```update_person.php``` to ```/Library/WebServer/Documents/```
 
 Make the directory writeable so that the sqlite database file can be modified.
 ```
@@ -60,7 +67,7 @@ For PHP, use this URL ```http://{your machine's external name}/update_person```
 
 For Ruby or Go, use this URL ```http://{your machine's external name}:4567/update_person```
 
-Read more about NationBuilder webhooks here: http://nationbuilder.com/webhooks_overview
+Read more about NationBuilder webhooks [here](http://nationbuilder.com/webhooks_overview)
 
 ![alt tag](https://raw.githubusercontent.com/3dna/my_webhook_server/master/nationbuilder_webhook_setup.png)
 
