@@ -16,7 +16,6 @@ while ($row = $results->fetchArray()) {
      echo "<td>".$row[1]."</td>";
      echo "<td>".$row[2]."</td>";
      echo "<td>".$row[3]."</td>";
-    // var_dump($row);
    echo "</tr>";
 }
 echo "</table>";
