@@ -43,6 +43,4 @@ $stmt->bindValue(4, $updates, SQLITE3_INTEGER);
 
 $result = $stmt->execute();
 
-echo "Updated person: " . $name . "\n"
-
 ?>
