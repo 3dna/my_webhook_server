@@ -29,7 +29,6 @@ func httpPostHandler(w http.ResponseWriter, r *http.Request) {
 		database := Open()
 		defer database.Close()
 
-		// f := person_map["id"].(float64)
 		fullname := fmt.Sprintf("%s %s", person_map["first_name"].(string), person_map["last_name"].(string))
 
 		p := Person{
