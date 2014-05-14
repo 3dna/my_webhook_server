@@ -10,12 +10,21 @@ function initialize_database() {
      updates INTEGER)
 SQL;
 
-  $stmt = $db->exec($sql);
+  $status = $db->exec($sql);
+
+  if (!$status) {
+    exit("Unable to initialize database file (people.db)");
+  }
+
   return $db;
 }
 
 function get_update_count($database)
   $results = $db->query('SELECT updates FROM people where id = ' . $id);
+
+  if (!$results) {
+    exit("Unable get update count for person's record")
+  }
 
   $updates = 1;
   if ($row = $results->fetchArray()) {
@@ -33,6 +42,10 @@ function insert($id, $name, $email, $updates) {
   $stmt->bindValue(4, $updates, SQLITE3_INTEGER);
 
   $result = $stmt->execute();
+
+  if (!$result) {
+    exit("Unable to insert or replace person's data");
+  }
 }
 
 function read_http_post() {
@@ -40,6 +53,10 @@ function read_http_post() {
 
   $make_associative_array = true;
   $person = json_decode($json_data, $make_associative_array);
+
+  if (!$person) {
+    exit("Invalid json sent");
+  }
 
   return $person;
 }
