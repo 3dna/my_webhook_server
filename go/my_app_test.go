@@ -29,7 +29,7 @@ func TestPostPerson(t *testing.T) {
 	httpGetHandler(w, req)
 
 	expected_title := "ID    Name            Email                Updates"
-  expected_row   := "Billy Smith     r@example.com        2"
+	expected_row := "Billy Smith     r@example.com        2"
 
 	actual_body := w.Body.String()
 	if !strings.Contains(actual_body, expected_title) {

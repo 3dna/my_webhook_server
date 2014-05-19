@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "code.google.com/p/go-sqlite/go1/sqlite3"
 	"database/sql"
 	"encoding/json"
 	"fmt"
@@ -10,7 +11,6 @@ import (
 	"os"
 	"runtime"
 	"strings"
-	_ "code.google.com/p/go-sqlite/go1/sqlite3"
 )
 
 func httpPostHandler(w http.ResponseWriter, r *http.Request) {
@@ -66,7 +66,6 @@ func init() {
 	// Use all CPUs
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
-
 
 // database specific code below here
 
@@ -124,19 +123,19 @@ func (db Database) Insert(p Person) {
 }
 
 func (db Database) ListPeople(w http.ResponseWriter) {
-  rows, err := db.database.Query("SELECT id, name, email, updates FROM people;")
-  if err != nil {
-    log.Fatal(err)
-  }
+	rows, err := db.database.Query("SELECT id, name, email, updates FROM people;")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-  fmt.Fprintf(w, "%-5s %-15s %-20s %-5s\n", "ID", "Name", "Email", "Updates")
-  fmt.Printf(strings.Repeat("-", 66) + "\n")
+	fmt.Fprintf(w, "%-5s %-15s %-20s %-5s\n", "ID", "Name", "Email", "Updates")
+	fmt.Printf(strings.Repeat("-", 66) + "\n")
 
-  for rows.Next() {
-    var p Person
-    rows.Scan(&p.id, &p.name, &p.email, &p.updates)
-    fmt.Fprintf(w, "%-5d %-15s %-20s %-5d\n", p.id, p.name, p.email, p.updates)
-  }
+	for rows.Next() {
+		var p Person
+		rows.Scan(&p.id, &p.name, &p.email, &p.updates)
+		fmt.Fprintf(w, "%-5d %-15s %-20s %-5d\n", p.id, p.name, p.email, p.updates)
+	}
 }
 
 func (db Database) Close() {
