@@ -55,6 +55,7 @@ get '/list_people' do
   end
 
   <<-TABLE
+  <h4>People</h4>
   <table style="width:300px">
   <tr>
     <td>ID</td>
