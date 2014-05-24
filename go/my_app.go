@@ -23,7 +23,7 @@ func httpPostHandler(w http.ResponseWriter, r *http.Request) {
 		var person_map map[string]interface{}
 
 		if err := json.Unmarshal(body, &person_map); err != nil {
-			panic(err)
+			http.Error(w, "Invalid JSON sent", 400)
 		}
 
 		database := Open()
@@ -51,21 +51,6 @@ func httpGetHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 const PORT = ":4567"
-
-func main() {
-	http.HandleFunc("/update_person", httpPostHandler)
-	http.HandleFunc("/list_people", httpGetHandler)
-
-	error := http.ListenAndServe(PORT, nil)
-	if error != nil {
-		panic(error)
-	}
-}
-
-func init() {
-	// Use all CPUs
-	runtime.GOMAXPROCS(runtime.NumCPU())
-}
 
 // database specific code below here
 
@@ -140,4 +125,19 @@ func (db Database) ListPeople(w http.ResponseWriter) {
 
 func (db Database) Close() {
 	db.database.Close()
+}
+
+func main() {
+	http.HandleFunc("/update_person", httpPostHandler)
+	http.HandleFunc("/list_people", httpGetHandler)
+
+	error := http.ListenAndServe(PORT, nil)
+	if error != nil {
+		panic(error)
+	}
+}
+
+func init() {
+	// Use all CPUs
+	runtime.GOMAXPROCS(runtime.NumCPU())
 }
